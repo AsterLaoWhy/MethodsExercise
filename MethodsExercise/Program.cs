@@ -30,13 +30,10 @@
         }
         public static int add(int num1, int num2)
         {
-            Console.WriteLine("Please type one number");
-            try { num1 = int.Parse(Console.ReadLine()); }
-            catch { num1 = 2; Console.WriteLine("Can't you just use a number? I decided this one is 2\n"); }
-            Console.WriteLine("Please type the second number");
-            try { num2 = int.Parse(Console.ReadLine()); }
-            catch { num2 = 2; Console.WriteLine("Can't you just use a number? I decided this one is 2.\n"); }
-            return num1 + num2;
+            int sum = num1 + num2;
+            Console.WriteLine($"The sum is {sum}.");
+
+            return sum;
         }
         public static int Multiply()// I don't get why you'd use params here when you could just do it this way 
         {
@@ -63,9 +60,25 @@
         }
         static void Main(string[] args)
         {
-            Story(); //Thank you ChatGPT for the beautiful story
+            //Story(); //Thank you ChatGPT for the beautiful story
             //Console.WriteLine("Hello, World!");
             Multiply();
+            
+            
+            int num1;
+            int num2;
+            Console.WriteLine("Please type one number");
+            num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please type the second number");
+            num2 = int.Parse(Console.ReadLine());
+            add(num1, num2);
+            Console.WriteLine("Press Y to end");
+            string end = Console.ReadLine();
+            if (end != "y" || end !="Y") 
+            {
+                Console.WriteLine("Enjoy staying here");
+            }
+
         }
     }
 }
